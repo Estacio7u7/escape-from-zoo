@@ -1,12 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./Styles/styles.css">
+
     <title>Zoo Escape</title>
 </head>
+
 <body>
-    
+
+    <div class="game-container">
+
+        <div id="messages-mobile" class="messages">
+            <!-- TODO -->
+            <p>Vidas: 3 3 3 </p>
+            <p>Tiempo: contador</p>
+            <p>Record: maxRecord</p>
+        </div>
+
+        <canvas id="game">
+
+        </canvas>
+        <div class="half-screen">
+            <div class="buttons">
+
+                <button id="up">
+                    <img src="https://cdn-icons-png.flaticon.com/128/271/271239.png" alt="arriba">
+                </button>
+
+                <button id="left">
+                    <img src="https://cdn-icons-png.flaticon.com/128/271/271220.png" alt="izquierda">
+                </button>
+
+                <button id="right">
+                    <img src="https://cdn-icons-png.flaticon.com/128/271/271228.png" alt="derecha">
+                </button>
+
+                <button id="down">
+                    <img src="https://cdn-icons-png.flaticon.com/128/271/271210.png" alt="abajo">
+                </button>
+            </div>
+
+            <div id="messages-desktop" class="messages">
+                <!-- TODO -->
+                <p>Vidas: 3 3 3 </p>
+                <p>Tiempo: contador</p>
+                <p>Record: maxRecord</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./JavasCript/maps.js"></script>
+    <script src="./JavasCript/main.js"></script>
 </body>
+
 </html>

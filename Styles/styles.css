@@ -1,0 +1,197 @@
+:root {
+    --background: #A11692;
+    --buttons-background: #F2C14E;
+    --website-green: #ACD9B2;
+    --border-brown: #472C1B;
+    --gray-background: #F3F3F455;
+    --normal: 16px;
+    --grande: 20px;
+    --gigante: 24px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--background);
+    font-family: 'Quicksand', sans-serif;
+}
+
+.game-container {
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    height: 100vh;
+}
+
+#messages-mobile {
+    display: flex;
+    justify-content: space-between;
+
+    padding: .8rem;
+    width: 30rem;
+    height: 5rem;
+
+    border-radius: 1rem;
+}
+
+canvas {
+    width: 30rem;
+
+    border: .5rem solid var(--border-brown);
+    border-radius: 3rem;
+}
+
+.half-screen {
+    width: 30rem;
+    height: 30vh;
+
+    display: grid;
+    place-content: center;
+}
+
+.buttons {
+    display: grid;
+
+    width: 30rem;
+    height: 30rem;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: .5rem;
+    row-gap: .5rem;
+
+    place-items: center;
+
+}
+
+.buttons button {
+    width: 8rem;
+    height: 8rem;
+
+    border: none;
+    border-radius: 25%;
+
+    background-color: var(--buttons-background);
+}
+
+.buttons img {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.buttons button:nth-child(1) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.buttons button:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.buttons button:nth-child(3) {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.buttons button:nth-child(4) {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.messages {
+    background-color: var(--gray-background);
+    place-items: center;
+    font-size: var(--normal);
+    font-weight: bold;
+    color: var(--website-green);
+
+}
+
+#messages-desktop {
+    display: none;
+}
+
+@media (min-width: 640px) {
+
+    #messages-mobile {
+        display: none;
+    }
+
+    canvas {
+        width: 60rem;
+    }
+
+    .half-screen {
+        width: 60rem;
+        display: flex;
+        align-items: center;
+    }
+
+    #messages-desktop {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        padding: 2rem;
+        width: 30rem;
+        height: 30rem;
+
+        border-radius: 1rem;
+    }
+
+    .buttons {
+        display: grid;
+        width: 30rem;
+        height: 30rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        place-items: center;
+    }
+
+    .buttons button {
+        width: 10rem;
+        height: 10rem;
+
+        border-radius: 25%;
+    }
+
+    .buttons button:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .buttons button:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .buttons button:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .buttons button:nth-child(4) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+}
+
+@media (min-width: 800px) {
+    canvas {
+        width: 78rem;
+    }
+
+    .half-screen {
+        width: 78rem;
+    }
+}
