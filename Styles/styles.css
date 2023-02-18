@@ -1,8 +1,9 @@
 :root {
     --background: #A11692;
     --buttons-background: #F2C14E;
+    --game-background: #feff9d;
     --website-green: #ACD9B2;
-    --border-brown: #472C1B;
+    --border-orange: #ff6600;
     --gray-background: #F3F3F455;
     --normal: 16px;
     --grande: 20px;
@@ -27,7 +28,10 @@ body {
 .game-container {
     display: grid;
     place-items: center;
+    padding: 3rem;
 
+    grid-template-rows: auto 1fr auto;
+    justify-content: center;
     width: 100%;
     height: 100vh;
 }
@@ -44,15 +48,16 @@ body {
 }
 
 canvas {
-    width: 30rem;
 
-    border: .5rem solid var(--border-brown);
+    border: .5rem solid var(--border-orange);
     border-radius: 3rem;
+
+    background-color: var(--game-background);
 }
 
 .half-screen {
     width: 30rem;
-    height: 30vh;
+    
 
     display: grid;
     place-content: center;
@@ -62,7 +67,6 @@ canvas {
     display: grid;
 
     width: 30rem;
-    height: 30rem;
 
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -127,10 +131,6 @@ canvas {
         display: none;
     }
 
-    canvas {
-        width: 60rem;
-    }
-
     .half-screen {
         width: 60rem;
         display: flex;
@@ -187,11 +187,8 @@ canvas {
 }
 
 @media (min-width: 800px) {
-    canvas {
-        width: 78rem;
-    }
 
     .half-screen {
-        width: 78rem;
+        width: 76rem;
     }
 }
