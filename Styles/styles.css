@@ -48,10 +48,8 @@ body {
 }
 
 canvas {
-
     border: .5rem solid var(--border-orange);
-    border-radius: 3rem;
-
+    border-radius: 2rem;
     background-color: var(--game-background);
 }
 
