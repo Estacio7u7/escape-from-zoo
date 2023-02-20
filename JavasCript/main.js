@@ -5,6 +5,7 @@ window.addEventListener('load', setCanvaSize);
 window.addEventListener('resize', setCanvaSize);
 
 var nivel = 0;
+var lives = 3;
 var canvaSize;
 var elementSize;
 let playerPosition = {X:undefined, Y:undefined};
@@ -50,6 +51,7 @@ function renderGame(lvl) {
         });
     });
     renderPlayer();
+    spanLives.innerHTML = emojis['HEARTH'].repeat(lives);
 }
 
 function setCanvaSize() {
