@@ -83,19 +83,11 @@ function isColliding(newRow, newColumn) {
 
         case 'X':
             console.log('Collided');
-            
-            if(lives-1==0){
-                nivel = 0;
-                lives = 3;   
-            } else  lives-=1;
-
-            playerPosition.X = 0;
-            playerPosition.Y = 0;
+            lostLive();
             return true;
 
         case 'I':
-            console.log('Finished level');
-            (nivel+1 == maps.length) ? nivel=nivel : nivel+=1;
+            levelPassed();
             break;
     }
 
