@@ -2,7 +2,6 @@ const btnUp = document.querySelector('#up');
 const btnDown = document.querySelector('#down');
 const btnLeft = document.querySelector('#left');
 const btnRight = document.querySelector('#right');
-const spanLives = document.querySelector('#lives')
 
 btnUp.addEventListener('click', moveUp);
 btnDown.addEventListener('click', moveDown);
@@ -29,7 +28,7 @@ function keyPressed(event) {
 }
 
 function moveUp() {
-    console.log("Move up")
+    //console.log("Move up")
     const newRow = playerPosition.Y - 1;
 
     if (newRow > 0) {
@@ -38,7 +37,7 @@ function moveUp() {
             playerPosition.Y = newRow;
     }
 
-    renderGame(nivel);
+    renderGame(level);
 }
 
 function moveDown() {
@@ -50,7 +49,7 @@ function moveDown() {
             playerPosition.Y = newRow;
     }
 
-    renderGame(nivel);
+    renderGame(level);
 }
 
 function moveLeft() {
@@ -60,7 +59,7 @@ function moveLeft() {
         if (!isColliding(row, newColumn))
             playerPosition.X = newColumn;
     }
-    renderGame(nivel);
+    renderGame(level);
 }
 
 function moveRight() {
@@ -70,20 +69,20 @@ function moveRight() {
         if (!isColliding(row, newColumn))
         playerPosition.X = newColumn;
     }
-    renderGame(nivel);
+    renderGame(level);
 }
 
 function isColliding(newRow, newColumn) {
 
     switch (columns[newRow-1][newColumn-1]) {
         case 'O':
-            console.log('Returned to the start');
-            (nivel-1 < 0) ? nivel=nivel : nivel-=1;
+            //console.log('Returned to the start');
+            (level-1 < 0) ? level=level : level-=1;
             break;
 
         case 'X':
-            console.log('Collided');
-            lostLive();
+            //console.log('Collided');
+            lostLive(); // reduce lives
             return true;
 
         case 'I':

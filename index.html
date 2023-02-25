@@ -18,7 +18,7 @@
 
     <div class="game-container">
 
-        <div id="messages-mobile" class="messages">
+        <div class="messages">
             <div>
                 <p>Vidas:</p>
                 <span id="lives"></span>
@@ -27,10 +27,10 @@
                 <p>Tiempo:</p>
                 <span id="counter">0:00:00</span>
             </div>
-            
+
             <div>
                 <p>Record:</p>
-                <span id="record"></span>
+                <span id="record">0:00:00</span>
             </div>
         </div>
 
@@ -38,44 +38,32 @@
 
         </canvas>
 
-        <div class="half-screen">
+        <div class="buttons">
 
-            <div class="buttons">
+            <button id="up">
+                <img src="https://cdn-icons-png.flaticon.com/128/271/271239.png" alt="arriba">
+            </button>
 
-                <button id="up">
-                    <img src="https://cdn-icons-png.flaticon.com/128/271/271239.png" alt="arriba">
-                </button>
+            <button id="left">
+                <img src="https://cdn-icons-png.flaticon.com/128/271/271220.png" alt="izquierda">
+            </button>
 
-                <button id="left">
-                    <img src="https://cdn-icons-png.flaticon.com/128/271/271220.png" alt="izquierda">
-                </button>
+            <button id="right">
+                <img src="https://cdn-icons-png.flaticon.com/128/271/271228.png" alt="derecha">
+            </button>
 
-                <button id="right">
-                    <img src="https://cdn-icons-png.flaticon.com/128/271/271228.png" alt="derecha">
-                </button>
-
-                <button id="down">
-                    <img src="https://cdn-icons-png.flaticon.com/128/271/271210.png" alt="abajo">
-                </button>
-            </div>
-
-            <div id="messages-desktop" class="messages">
-                <div>
-                    <p>Vidas:</p>
-                    <span id="lives"></span>
-                </div>
-                <div>
-                    <p>Tiempo:</p>
-                    <span id="counter">0:00:00</span>
-                </div>
-                
-                <div>
-                    <p>Record:</p>
-                    <span id="record"></span>
-                </div>
-            </div>
+            <button id="down">
+                <img src="https://cdn-icons-png.flaticon.com/128/271/271210.png" alt="abajo">
+            </button>
         </div>
 
+    </div>
+
+    <div class="game-console no-visible">
+        <div class="middle-line">
+            <div class="console-message"> To Do </div>
+            <button class="action-button"> To Do </button>
+        </div>
     </div>
 
     <script src="./JavasCript/maps.js"></script>

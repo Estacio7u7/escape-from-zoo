@@ -5,9 +5,9 @@
     --website-green: #ACD9B2;
     --border-orange: #ff6600;
     --gray-background: #F3F3F455;
-    --normal: 16px;
-    --grande: 20px;
-    --gigante: 24px;
+    --normal: 20px;
+    --big: 24px;
+    --giant: 48px;
 }
 
 * {
@@ -29,25 +29,42 @@ body {
 .game-container {
     display: grid;
     place-items: center;
-    padding: 1.6rem;
+    padding: 1.2rem;
 
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: repeat(3, auto);
     justify-content: center;
+
     width: 100%;
     height: 100vh;
     overflow: hidden;
 }
 
-#messages-mobile {
+.messages {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     width: 90%;
-    height: 5rem;
-    
-    margin-bottom: 1rem;
+    height: 5.5rem;
 
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
     border-radius: 1rem;
+
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    background-color: var(--gray-background);
+    font-size: var(--normal);
+    font-weight: bold;
+    color: var(--website-green);
+}
+
+.messages div {
+    width: 30%;
+    text-align: center;
 }
 
 canvas {
@@ -58,10 +75,9 @@ canvas {
 }
 
 .buttons {
-    justify-self: center;
     display: grid;
-
-    width: 90%;
+    justify-self: center;
+ 
     margin-top: 1rem;
     margin-bottom: 1rem;
 
@@ -72,8 +88,8 @@ canvas {
 }
 
 .buttons button {
-    width: 8rem;
-    height: 8rem;
+    width: 7rem;
+    height: 7rem;
 
     border: none;
     border-radius: 25%;
@@ -84,6 +100,7 @@ canvas {
 .buttons img {
     width: 3.5rem;
     height: 3.5rem;
+    
 }
 
 .buttons button:nth-child(1) {
@@ -106,96 +123,117 @@ canvas {
     grid-row: 3;
 }
 
-.messages {
+.game-console {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding-top: .5rem;
-    padding-left: 1.6rem;
-    padding-right: 1.6rem;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    z-index: 2;
     background-color: var(--gray-background);
-    font-size: var(--normal);
-    font-weight: bold;
+}
+
+.middle-line {
+    width: 100%;
+    height: 30%;
+    
+    display: grid;
+    place-items: center;
+
+    font-size: var(--big);
+    font-weight: bolder;
+    text-align: center;
     color: var(--website-green);
+    
+    background-color: var(--background);
+    border-top: 1.2rem solid var(--border-orange);
+    border-bottom: 1.2rem solid var(--border-orange);
 }
 
-.messages p {
-    width: 30%;
-    align-self: center;
+.console-message {
+    padding: .8rem;
 }
 
-#messages-desktop {
+.action-button {
+    width: 15rem;
+    height: 5rem;
+
+    font-size: var(--big);
+    font-weight: bold;
+
+    border: none;
+    background-color: var(--buttons-background);
+    border-radius: 1.6rem;
+}
+
+.no-visible {
     display: none;
 }
 
 @media (min-width: 640px) {
 
-    #messages-mobile {
-        display: none;
-    }
-
-    .half-screen {
-        display: flex;
-        align-items: center;
-    }
-
-    #messages-desktop {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        width: 30rem;
-        height: 30rem;
-
-        border-radius: 1rem;
+    .messages {
+        font-size: var(--big);
+        height: auto;
     }
 
     .buttons {
-        display: grid;
-        width: 30rem;
-        height: 30rem;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        display: flex;
+        justify-content: space-between;
         place-items: center;
     }
 
     .buttons button {
         width: 10rem;
         height: 10rem;
-
-        border-radius: 25%;
+        margin: 1rem;
     }
 
-    .buttons button:nth-child(1) {
-        grid-column: 1;
-        grid-row: 1;
+    .middle-line{
+        font-size: var(--giant);
     }
-
-    .buttons button:nth-child(2) {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
-    .buttons button:nth-child(3) {
-        grid-column: 2;
-        grid-row: 2;
-    }
-
-    .buttons button:nth-child(4) {
-        grid-column: 1;
-        grid-row: 2;
+    .action-button {
+        width: 60rem;
+        height: 10rem;
+        font-size: var(--giant);
     }
 }
 
 @media (min-width: 1000px) {
-    #messages-mobile {
+    .game-container {
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: auto;
+        padding: 3rem;
+    }
+
+    .messages {
         display: flex;
         flex-direction: column;
-        height: auto;
+        justify-content: space-between;
+        width: 15rem;
+        height: 90%;
+    
     }
-    #messages-desktop {
-        display: none;
+
+    .messages div {
+        width: 100%;
+
+        margin-top: 5rem;
+        margin-bottom: 5rem;
     }
-    .game-container {
-        grid-template-columns: auto 1fr auto;
-        grid-template-rows: auto;
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .middle-line{
+        font-size: var(--big);
+    }
+    .action-button {
+        width: 14rem;
+        height: 4rem;
+        font-size: var(--big);
     }
 }
